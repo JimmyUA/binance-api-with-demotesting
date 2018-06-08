@@ -248,4 +248,10 @@ public interface BinanceApiRestClient {
    * @param listenKey listen key that identifies a data stream
    */
   void closeUserDataStream(String listenKey);
+
+
+  public void setBaseCurrency(String baseCurrency);
+
+  public void setTradeCurrency(String tradeCurrency);
+
 }

@@ -38,6 +38,12 @@ public class BinanceApiRestClientImpl implements BinanceApiRestClient {
     binanceApiService = createService(BinanceApiService.class, apiKey, secret);
   }
 
+  public void setBaseCurrency(String baseCurrency) {
+  }
+
+  public void setTradeCurrency(String tradeCurrency) {
+  }
+
   // General endpoints
 
   @Override

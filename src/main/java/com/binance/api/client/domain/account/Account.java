@@ -1,5 +1,6 @@
 package com.binance.api.client.domain.account;
 
+import com.binance.api.client.constant.BinanceApiConstants;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -44,6 +45,12 @@ public class Account {
    * Whether or not it is possible to deposit into this account.
    */
   private boolean canDeposit;
+
+  /**
+   * Last account update time.
+   */
+  private long updateTime;
+
 
   private List<AssetBalance> balances;
 
@@ -130,17 +137,26 @@ public class Account {
     return emptyBalance;
   }
 
+  public long getUpdateTime() {
+    return updateTime;
+  }
+
+  public void setUpdateTime(long updateTime) {
+    this.updateTime = updateTime;
+  }
+
   @Override
   public String toString() {
     return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-        .append("makerCommission", makerCommission)
-        .append("takerCommission", takerCommission)
-        .append("buyerCommission", buyerCommission)
-        .append("sellerCommission", sellerCommission)
-        .append("canTrade", canTrade)
-        .append("canWithdraw", canWithdraw)
-        .append("canDeposit", canDeposit)
-        .append("balances", balances)
-        .toString();
+            .append("makerCommission", makerCommission)
+            .append("takerCommission", takerCommission)
+            .append("buyerCommission", buyerCommission)
+            .append("sellerCommission", sellerCommission)
+            .append("canTrade", canTrade)
+            .append("canWithdraw", canWithdraw)
+            .append("canDeposit", canDeposit)
+            .append("updateTime", updateTime)
+            .append("balances", balances)
+            .toString();
   }
 }
