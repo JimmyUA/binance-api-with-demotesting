@@ -75,10 +75,21 @@ public class Order {
    */
   private String icebergQty;
 
+  private boolean isWorking;
+
   /**
    * Order timestamp.
    */
   private long time;
+
+
+  public boolean getIsWorking() {
+    return isWorking;
+  }
+
+  public void setIsWorking(boolean isWorking) {
+    this.isWorking = isWorking;
+  }
 
   public String getSymbol() {
     return symbol;
@@ -200,6 +211,7 @@ public class Order {
         .append("stopPrice", stopPrice)
         .append("icebergQty", icebergQty)
         .append("time", time)
+        .append("isWorking", isWorking)
         .toString();
   }
 }
